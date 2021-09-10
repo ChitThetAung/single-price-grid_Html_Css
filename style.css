@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Cyan: hsl(179, 62%, 43%);
+  --Bright-Yellow: hsl(71, 73%, 54%);
+
+  --Light-Gray: hsl(204, 43%, 93%);
+  --Grayish-Blue: hsl(218, 22%, 67%);
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Karla', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: .5rem;
+  line-height: 1.6;
+  font-weight: 400;
+  background-color: var(--Light-Gray);
+  min-height: 100vh;
+  
+}
+
+/* ------ Common ----- */
+h4,h2{
+    color: #fff;
+}
+
+span{
+    color: #fff;
+    margin-left: 1rem;
+    opacity: .6;
+}
+p{
+    color:var(--Light-Gray);
+    font-size: 1.4rem;
+}
+header{
+    background-color: #fff;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+}
+header .title{
+    color: var(--Cyan);
+    font-weight: 700;
+}
+header .sub-title{
+    color: var(--Bright-Yellow);
+    font-weight: 700;
+    margin: 2rem 0;
+    font-size: 1.4rem;
+
+}
+header p{
+    color: var(--Grayish-Blue);
+}
+
+header,.card{
+    padding: 2.5rem;
+
+}
+.monthly{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+.price{
+    font-size: 3rem;
+}
+
+.btn{
+    background-color: var(--Bright-Yellow);
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: .5rem;
+    padding: 1.5rem 0;
+    color: #fff;
+    margin-top: 2.5rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+
+.card-des{
+    background-color: var(--Cyan);
+}
+.card-about{
+    background-color: var(--Cyan);
+    opacity: 0.7;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+}
+.card-about h4{
+    margin-bottom: 1rem;
+}
+.card-about p{
+    max-width: 21rem;
+}
+
+
+/* ------ Layout ----- */
+.container {
+   width: 80%;
+  margin: 6rem auto;
+  
+  display: grid;
+  grid-template-rows: 1fr repeat(2,minmax(20rem,1fr));
+  border-radius: .5rem;
+
+}
+
+@media (min-width:768px) {
+    .container{
+        grid-template-columns: repeat(2,minmax(20rem,27rem));
+        grid-template-areas: 
+        "header header"  
+        "card-des card-about"  
+        ;
+        justify-content: center;
+}
+
+header{
+    grid-area: header;
+    padding: 3rem 2.5rem;
+}
+header .title{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+header .sub-title{
+    font-size: 1.57rem;
+}
+
+.card-des{
+    grid-area: card-des;
+    border-radius: 0 0 0 .5rem;
+}
+.card-about{
+    grid-area: card-about;
+    border-radius: 0 0 .5rem 0;
+
+}
+
+}
+
